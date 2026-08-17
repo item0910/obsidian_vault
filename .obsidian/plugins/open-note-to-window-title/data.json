@@ -1,0 +1,7 @@
+{
+  "titleTemplate": "{{filename}}",
+  "titleTemplateEmpty": "Item",
+  "titleSeparator": " - ",
+  "delimStr": "~~",
+  "overrideYamlField": "{{title}}"
+}

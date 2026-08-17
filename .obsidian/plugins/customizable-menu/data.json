@@ -1,0 +1,35 @@
+{
+  "menuCommands": [
+    {
+      "name": "Excalidraw: 新建绘图（在新面板），并插入（嵌入）到当前文档",
+      "id": "obsidian-excalidraw-plugin:excalidraw-autocreate-and-embed",
+      "icon": "image"
+    },
+    {
+      "name": "Copy as HTML: Copy as HTML command",
+      "id": "copy-as-html:copy-as-html-command",
+      "icon": "align-left"
+    },
+    {
+      "name": "Wikilinks to MDLinks: Toggle selected wikilink to markdown link and vice versa",
+      "id": "wikilinks-to-mdlinks-obsidian:toggle-wiki-md-links",
+      "icon": "arrow-left-right"
+    },
+    {
+      "name": "Convert url to preview (iframe): URL to Preview/Iframe",
+      "id": "convert-url-to-iframe:url-to-iframe",
+      "icon": "camera"
+    },
+    {
+      "id": "obsidian-footnotes:insert-autonumbered-footnote",
+      "name": "Footnote Shortcut: Insert / Navigate Auto-Numbered Footnote",
+      "icon": "plus-square"
+    }
+  ],
+  "hideTitles": [
+    "Add link",
+    "Add external link",
+    "Format",
+    "Paragraph"
+  ]
+}

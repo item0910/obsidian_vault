@@ -1,0 +1,140 @@
+{
+  "main": {
+    "id": "fe38bef6a15dda14",
+    "type": "split",
+    "children": [
+      {
+        "id": "afac7f6ee4a4c0a3",
+        "type": "leaf",
+        "state": {
+          "type": "empty",
+          "state": {}
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "6cad8394e4976e6b",
+    "type": "split",
+    "children": [
+      {
+        "id": "5b831a5b938378a7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d0e81287c6f771e8",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "ee364d3be291df9d",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "4679eefba7eb6aeb",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "alphabetical",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "435d50028caecb13",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {}
+            }
+          },
+          {
+            "id": "46e59d3342e214e7",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
+          },
+          {
+            "id": "754a797e9f16399e",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          },
+          {
+            "id": "e101cc4c293e8a10",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 330.00584411621094
+  },
+  "right": {
+    "id": "6e8352c1e6edc2f7",
+    "type": "split",
+    "children": [
+      {
+        "id": "2f670f3b13ddcee0",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "aa46b9d70d39ca73",
+            "type": "leaf",
+            "state": {
+              "type": "gptModelSettings",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "active": "afac7f6ee4a4c0a3",
+  "lastOpenFiles": [
+    "未命名.md",
+    "07_周记/Process记录.md",
+    "05_生活和目标/00_种草/网络关注存档.md",
+    "01_写作-日常写作/03_碎片/海布里.md",
+    "05_生活和目标/01_生活记录和目标/Codess.md",
+    "00_摘抄-花草树木/00_古文和诗词/三峡.md",
+    "00_摘抄-花草树木/00_古文和诗词/观沧海.md",
+    "00_摘抄-花草树木/00_古文和诗词/定风波·莫听穿林打叶声.md",
+    "00_摘抄-花草树木/00_古文和诗词/战国地图.md",
+    "02_写作-生产记录和技术博客/01_生产记录/零散/Adblock留档.md"
+  ]
+}

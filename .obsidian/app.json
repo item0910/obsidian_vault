@@ -1,0 +1,10 @@
+{
+  "promptDelete": false,
+  "alwaysUpdateLinks": true,
+  "propertiesInDocument": "source",
+  "readableLineLength": false,
+  "foldHeading": true,
+  "attachmentFolderPath": "附件",
+  "showInlineTitle": true,
+  "showLineNumber": false
+}

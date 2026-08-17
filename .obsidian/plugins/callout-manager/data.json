@@ -1,0 +1,56 @@
+{
+  "callouts": {
+    "custom": [
+      "movie"
+    ],
+    "settings": {
+      "摘抄": [
+        {
+          "changes": {}
+        },
+        {
+          "condition": {
+            "colorScheme": "light"
+          },
+          "changes": {}
+        },
+        {
+          "condition": {
+            "colorScheme": "dark"
+          },
+          "changes": {
+            "color": "199, 202, 204"
+          }
+        }
+      ],
+      "movie": [
+        {
+          "changes": {
+            "icon": "lucide-film"
+          }
+        },
+        {
+          "condition": {
+            "colorScheme": "light"
+          },
+          "changes": {
+            "color": "0, 255, 145"
+          }
+        },
+        {
+          "condition": {
+            "colorScheme": "dark"
+          },
+          "changes": {
+            "color": "0, 255, 145"
+          }
+        }
+      ]
+    }
+  },
+  "calloutDetection": {
+    "obsidian": true,
+    "theme": true,
+    "snippet": true
+  }
+}

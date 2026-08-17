@@ -1,0 +1,27 @@
+{
+  "snippets_file": "zhaichao : > [!摘抄] \n摘抄 : > [!摘抄] \nlianxi : > [!练习] \n练习 : > [!练习] \nnote : > [!note] \nquestion : > [!question] \npy : ```python$nl$$nl$```\npython : ```python$nl$$nl$```\njava : ```java$nl$$nl$```\nsql : ```sql$nl$$nl$```\nyaml : ```yaml$nl$$nl$```\njson : ```json$nl$$nl$```\nbash : ```bash$nl$$nl$```\ntodo : > [!Todo] ",
+  "snippets": [
+    "zhaichao : > [!摘抄] ",
+    "摘抄 : > [!摘抄] ",
+    "lianxi : > [!练习] ",
+    "练习 : > [!练习] ",
+    "note : > [!note] ",
+    "question : > [!question] ",
+    "py : ```python$nl$$nl$```",
+    "python : ```python$nl$$nl$```",
+    "java : ```java$nl$$nl$```",
+    "sql : ```sql$nl$$nl$```",
+    "yaml : ```yaml$nl$$nl$```",
+    "json : ```json$nl$$nl$```",
+    "bash : ```bash$nl$$nl$```",
+    "todo : > [!Todo] "
+  ],
+  "endSymbol": "$end$",
+  "newlineSymbol": "$nl$",
+  "stopSymbol": "$tb$",
+  "pasteSymbol": "$pst$",
+  "useTab": true,
+  "useSpace": false,
+  "wordDelimiters": "$()[]{}<>,.!?;:'\"\\/",
+  "isWYSIWYG": true
+}

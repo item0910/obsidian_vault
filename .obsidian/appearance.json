@@ -1,0 +1,25 @@
+{
+  "baseFontSize": 16,
+  "enabledCssSnippets": [
+    "custom-icons-differing-files-and-folders",
+    "1",
+    "510",
+    "背景LF",
+    "lifang",
+    "deep补充",
+    "背景荷花",
+    "my",
+    "背景lifang"
+  ],
+  "translucency": false,
+  "cssTheme": "deeper work",
+  "theme": "obsidian",
+  "monospaceFontFamily": "Courier",
+  "interfaceFontFamily": "思源宋体 CN",
+  "accentColor": "",
+  "nativeMenus": false,
+  "textFontFamily": "思源宋体 CN",
+  "baseFontSizeAction": true,
+  "showRibbon": true,
+  "showViewHeader": false
+}

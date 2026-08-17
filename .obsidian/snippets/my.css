@@ -1,0 +1,934 @@
+/* ================================================= */
+/* Obsidian 自定义样式 */
+/* ================================================= */
+
+
+/* ================================================= */
+/* 1. Floating TOC */
+/* ================================================= */
+
+.workspace-leaf-content
+.floating-toc-div:is(.floating-left, .floating-both)
++ .markdown-source-view
+> .cm-editor {
+    padding-left: 0;
+}
+
+
+/* ================================================= */
+/* 2. 自定义 Callout */
+/* ================================================= */
+
+/* 摘抄 */
+.callout[data-callout="摘抄"] {
+    --callout-color: 52, 156, 243;
+    --callout-icon: lucide-quote;
+}
+
+/* 练习 */
+.callout[data-callout="练习"] {
+    --callout-color: 255, 217, 102;
+    --callout-icon: lucide-dumbbell;
+}
+
+/* Callout 标题字体大小 */
+.callout-title-inner {
+    font-size: 100% !important;
+}
+
+
+/* ================================================= */
+/* 3. Side Dock */
+/* ================================================= */
+
+/*
+ * 设置等按钮的位置
+ * 一般不用修改
+ *
+.side-dock-settings {
+    margin-bottom: auto;
+}
+*/
+
+
+/* ================================================= */
+/* 4. 文件树 */
+/* ================================================= */
+
+/* 显示完整文件名 */
+.nav-file-title-content,
+.nav-folder-title-content {
+    overflow: visible !important;
+}
+
+
+/* 文件图标 */
+.nav-folder-children .nav-file-title-content:first-child::before {
+    content: "📝";
+}
+
+
+/* 文件夹图标 */
+.nav-folder-children .nav-folder-title-content::before {
+    content: "📁";
+}
+
+
+/* ================================================= */
+/* 5. 列表 */
+/* ================================================= */
+
+/* 编辑模式列表缩进 */
+.cm-list-1 {
+    padding-inline-start: 0;
+}
+
+
+/* 二级有序列表：a, b, c */
+ol ol {
+    list-style-type: lower-latin;
+}
+
+
+/* 三级有序列表：i, ii, iii */
+ol ol ol {
+    list-style-type: lower-roman;
+}
+
+
+/* 二级无序列表：空心圆 */
+ul ul {
+    list-style-type: circle;
+}
+
+
+/* 三级无序列表：方块 */
+ul ul ul {
+    list-style-type: square;
+}
+
+
+/* ================================================= */
+/* 6. 全局 Markdown 样式变量 */
+/* ================================================= */
+
+body {
+    /* 标题大小 */
+    --h1-size: 2.1rem !important;
+    --h2-size: 1.6rem !important;
+
+    /* 标题颜色 */
+    --h3-color: #c7a1ff;
+    --h4-color: #58a1ae;
+
+    /* 加粗颜色 */
+    --strong-color: #e4bf11;
+
+    /* Tab / 列表缩进距离 */
+    --list-indent: 1.25em;
+}
+
+
+/* ================================================= */
+/* 7. Markdown 标题 */
+/* ================================================= */
+
+/* 所有标题行高 */
+.cm-header {
+    line-height: 30px;
+}
+
+
+/* H2 */
+/* 底部增加一条淡灰白分割线 */
+.cm-header-2 {
+    width: 100%;
+    border-bottom: 2px solid rgba(245, 245, 245, 0.1);
+    padding-bottom: calc(1rem / 4);
+}
+
+
+/* H3 - 编辑模式 */
+.cm-header-3 {
+    color: #c7a1ff;
+}
+
+
+/* H4 - 编辑模式 */
+.cm-header-4 {
+    color: #58a1ae;
+}
+
+
+/* H3 - 阅读模式 */
+h3 {
+    color: #c7a1ff !important;
+}
+
+
+/* H4 - 阅读模式 */
+h4 {
+    color: #58a1ae !important;
+}
+
+
+/* ================================================= */
+/* 8. Inline Title */
+/* ================================================= */
+
+/* 文件顶部标题字体大小 */
+.inline-title {
+    font-size: 150%;
+}
+
+
+/* ================================================= */
+/* 9. 加粗 / 强调 */
+/* ================================================= */
+
+/*
+ * 粗体统一使用黄色
+ *
+ * 原 CSS 中：
+ *
+ * strong
+ * .cm-strong
+ *
+ * 存在重复定义，这里进行了合并。
+ */
+
+strong,
+.cm-strong {
+    color: #e4bf11 !important;
+}
+
+
+/* 引用中的粗体 */
+.cm-s-obsidian span.cm-quote.cm-strong {
+    color: #e4bf11 !important;
+}
+
+
+/*
+ * 如果你希望斜体也变成黄色，
+ * 可以取消下面代码的注释：
+ *
+em,
+.cm-em {
+    color: #e4bf11 !important;
+}
+*/
+
+
+/* ================================================= */
+/* 10. Quote / 引用 */
+/* ================================================= */
+
+/* 阅读模式引用字体缩小 */
+body .markdown-preview-view blockquote {
+    font-size: 90%;
+}
+
+
+/* 编辑模式引用 */
+.cm-s-obsidian span.cm-quote {
+    font-size: 90%;
+    font-style: italic;
+}
+
+
+/* ================================================= */
+/* 11. Frontmatter / Code / Math 字体 */
+/* ================================================= */
+
+/*
+ * 使用思源宋体 CN
+ *
+ * 如果系统中没有安装该字体，
+ * Obsidian 会自动使用 fallback 字体。
+ */
+
+body.unified-cm-highlighting[class*="theme-"]
+.CodeView
+.cm-s-obsidian
+.CodeMirror-lines,
+
+body.unified-cm-highlighting[class*="theme-"]
+.cm-s-obsidian
+.cm-hmd-frontmatter,
+
+body.unified-cm-highlighting[class*="theme-"]
+.cm-templater-command,
+
+body.unified-cm-highlighting[class*="theme-"]
+.cm-s-obsidian
+.HyperMD-codeblock,
+
+body.unified-cm-highlighting[class*="theme-"]
+.cm-s-obsidian
+.cm-math,
+
+body.unified-cm-highlighting[class*="theme-"]
+.HyperMD-codeblock,
+
+body.unified-cm-highlighting[class*="theme-"]
+.cm-hmd-codeblock {
+    font-family: "思源宋体 CN";
+    letter-spacing: 1px;
+}
+
+
+/*
+ * 如果只想修改 Frontmatter 字体，可以使用：
+ *
+.cm-hmd-frontmatter {
+    font-family: "思源宋体 CN";
+    letter-spacing: 1px;
+}
+*/
+
+
+/* ================================================= */
+/* 12. Dark Theme */
+/* ================================================= */
+
+/* 暗色主题滚动条 */
+.theme-dark {
+    --scrollbar-thumb-bg: var(--color-blue-0);
+}
+
+
+/* ================================================= */
+/* 13. 以下为备用配置 */
+/* ================================================= */
+
+
+/*
+ * App Container 顶部距离
+ *
+.app-container {
+    top: 20px;
+}
+*/
+
+
+/*
+ * 编辑模式行内代码
+ *
+.cm-s-obsidian span.cm-inline-code {
+    font-weight: 300;
+    font-size: 19px;
+}
+*/
+
+
+/*
+ * 数字排序和重点符号颜色
+ *
+.cm-formatting-list-ul + span {
+    color: #93ca76;
+}
+
+.cm-formatting-list-ol {
+    color: #956f29;
+}
+*/
+
+/* === BACKGROUND COMMON CONFIG START === */
+/*
+ * 此区域由 脚本1.py 从背景 CSS 迁移而来。
+ * 各背景 CSS 现在只保留 background-image。
+ */
+
+/* ================================================= */
+/* 🚀 Obsidian 自定义背景 CSS */
+/* ================================================= */
+
+
+/* ================================================= */
+/* 1. 全局变量和 BODY 背景 */
+/* ================================================= */
+
+body {
+    /* --------------------------------------------- */
+    /* 背景图片 */
+    /* 在 url('') 中填写你的图片路径 */
+    /* --------------------------------------------- */
+    /* background-image 由独立背景 CSS 提供 */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    line-height: 1.5;
+    word-wrap: break-word;
+
+    /* --------------------------------------------- */
+    /* 全局半透明背景 */
+    /* 0.9 = 90% 黑色，10% 背景图透出 */
+    /* --------------------------------------------- */
+    --translucent-bg: rgba(0, 0, 0, 0.90);
+
+    /* 设置窗口使用的透明背景 */
+    --settings-bg: rgba(0, 0, 0, 0.84);
+
+    /* 设置窗口左侧栏 */
+    --settings-sidebar-bg: rgba(0, 0, 0, 0.88);
+
+    /* 弹窗遮罩 */
+    --modal-overlay-bg: rgba(0, 0, 0, 0.35);
+
+    /* 不要修改 body opacity */
+    /* 否则文字、图片、按钮都会一起透明 */
+    opacity: 1 !important;
+
+    /* --------------------------------------------- */
+    /* Obsidian 核心背景变量 */
+    /* --------------------------------------------- */
+    --background-primary: transparent !important;
+    --background-primary-alt: transparent !important;
+
+    /* 侧边栏等区域 */
+    --background-secondary: var(--translucent-bg) !important;
+}
+
+
+/* ================================================= */
+/* 2. 核心内容区域透明 */
+/* ================================================= */
+
+/* 编辑器 */
+.markdown-source-view.mod-cm6 .cm-editor,
+
+/* 阅读模式 */
+.markdown-preview-view,
+
+/* View 内容 */
+.view-content,
+
+/* 编辑器滚动区域 */
+.markdown-source-view.mod-cm6 .cm-scroller,
+
+/* 侧边栏边界 */
+.side-dock-border-main,
+
+/* 左右抽屉 */
+.workspace-drawer.mod-left,
+.workspace-drawer.mod-right {
+    background-color: transparent !important;
+}
+
+
+/* ================================================= */
+/* 3. Workspace Leaf */
+/* ================================================= */
+
+/*
+ * 普通 Leaf 使用半透明背景
+ * Recent Files、Outline 等区域也会受到这里控制
+ */
+.workspace-leaf,
+.workspace-leaf-content {
+    background-color: var(--translucent-bg) !important;
+}
+
+
+/* Tabs 外层保持透明 */
+.workspace-tabs,
+.workspace-tabs .workspace-leaf {
+    background-color: transparent !important;
+}
+
+
+/* View 顶部标题栏 */
+.view-header {
+    background-color: var(--translucent-bg) !important;
+}
+
+
+/* ================================================= */
+/* 4. 特殊 Leaf */
+/* ================================================= */
+
+/*
+ * 这些插件/核心功能自身保持透明，
+ * 让 workspace-leaf 的半透明背景生效
+ */
+
+.workspace-leaf-content[data-type="recent-files"],
+.workspace-leaf-content[data-type="outline"],
+.workspace-leaf-content[data-type="advanced-tables-toolbar"],
+.workspace-leaf-content[data-type="bookmarks"] {
+    background-color: transparent !important;
+}
+
+
+/* ================================================= */
+/* 5. 编辑区 */
+/* ================================================= */
+
+/* 编辑区 Leaf */
+.workspace-leaf-content:has(.view-content) {
+    background-color: var(--translucent-bg) !important;
+}
+
+
+/* ================================================= */
+/* 6. 左侧边栏 */
+/* ================================================= */
+
+.workspace-split.mod-horizontal.mod-sidedock.mod-left-split {
+    background-color: transparent !important;
+
+    --background-secondary: var(--translucent-bg) !important;
+}
+
+
+/* ================================================= */
+/* 7. Ribbon 左侧功能区 */
+/* ================================================= */
+
+.workspace-ribbon.side-dock-ribbon.mod-left {
+    background-color: var(--translucent-bg) !important;
+}
+
+
+/* ================================================= */
+/* 8. 设置界面 Modal */
+/* ================================================= */
+
+/*
+ * ★ 重点修改区域 ★
+ *
+ * 不要使用：
+ *
+ * opacity: 0.8;
+ *
+ * 因为这样会导致：
+ * 文字
+ * 图片
+ * 按钮
+ * 图标
+ *
+ * 全部一起透明。
+ *
+ * 正确方法是使用 rgba() 控制背景透明度。
+ */
+
+
+/* ------------------------------------------------- */
+/* 8.1 设置窗口整体 */
+/* ------------------------------------------------- */
+
+body > div.modal-container.mod-dim > div.modal.mod-settings.mod-sidebar-layout {
+    /*
+     * 整个窗口本身保持 100% opacity
+     * 防止文字、图标、图片变透明
+     */
+    opacity: 1 !important;
+
+    /*
+     * 只让背景半透明
+     */
+    background-color: var(--settings-bg) !important;
+
+    /*
+     * 覆盖设置窗口内部使用的 Obsidian 背景变量
+     */
+    --background-primary: var(--settings-bg) !important;
+    --background-primary-alt: var(--settings-bg) !important;
+    --background-secondary: var(--settings-sidebar-bg) !important;
+}
+
+
+/* ------------------------------------------------- */
+/* 8.2 设置窗口左侧菜单 */
+/* ------------------------------------------------- */
+
+.modal.mod-settings .vertical-tab-header {
+    background-color: var(--settings-sidebar-bg) !important;
+}
+
+
+/* ------------------------------------------------- */
+/* 8.3 设置窗口右侧内容 */
+/* ------------------------------------------------- */
+
+.modal.mod-settings .vertical-tab-content {
+    background-color: var(--settings-bg) !important;
+}
+
+
+/* ------------------------------------------------- */
+/* 8.4 设置窗口内容容器 */
+/* ------------------------------------------------- */
+
+.modal.mod-settings .vertical-tab-content-container {
+    background-color: transparent !important;
+}
+
+
+/* ------------------------------------------------- */
+/* 8.5 设置窗口内部 */
+/* ------------------------------------------------- */
+
+.modal.mod-settings .modal-content {
+    background-color: transparent !important;
+}
+
+
+/* ================================================= */
+/* 9. Modal 遮罩层 */
+/* ================================================= */
+
+/*
+ * 原来这里使用：
+ *
+ * rgba(0,0,0,0.9)
+ *
+ * 会导致背景图几乎完全黑掉。
+ *
+ * 这里改成 0.35。
+ */
+
+.modal-container.mod-dim {
+    background-color: var(--modal-overlay-bg) !important;
+}
+
+
+/* ================================================= */
+/* 10. 普通 Modal */
+/* ================================================= */
+
+/*
+ * 非设置页面的 Modal
+ *
+ * 如果其他插件弹窗出现透明问题，
+ * 可以由这里控制。
+ */
+
+.modal:not(.mod-settings) {
+    opacity: 1 !important;
+}
+
+
+/* ================================================= */
+/* 11. Popover / Suggestion / Dropdown */
+/* ================================================= */
+
+/*
+ * 悬浮窗口、搜索建议、下拉菜单等
+ * 保持较高的不透明度，保证文字可读性。
+ */
+
+body > div.popover.hover-popover.is-editing,
+.popover,
+.suggestion-container,
+.dropdown {
+    background-color: rgba(20, 20, 20, 0.96) !important;
+
+    opacity: 1 !important;
+
+    --background-primary: rgba(20, 20, 20, 0.96) !important;
+    --background-secondary: rgba(20, 20, 20, 0.96) !important;
+}
+
+
+/* ================================================= */
+/* 12. Popover 内部内容 */
+/* ================================================= */
+
+.popover .markdown-embed,
+.popover .markdown-preview-view,
+.popover .markdown-source-view.mod-cm6 .cm-editor,
+.popover .workspace-leaf-content,
+.popover .view-content {
+    background-color: rgba(20, 20, 20, 0.96) !important;
+}
+
+
+/* ================================================= */
+/* 13. 移动端 */
+/* ================================================= */
+
+/* 移动端底部导航 / Toolbar */
+
+.mobile-navbar,
+.mobile-toolbar,
+.status-bar,
+.mobile-status-bar,
+.modal-container.is-mobile .modal-footer,
+.modal-container.is-mobile .modal-bg {
+    background-color: var(--translucent-bg) !important;
+
+    --background-secondary: var(--translucent-bg) !important;
+}
+
+
+/* ================================================= */
+/* 14. 移动端 View Actions */
+/* ================================================= */
+
+.view-actions {
+    background-color: transparent !important;
+}
+/* === BACKGROUND COMMON CONFIG END === */
+
+/* === MODAL TRANSPARENCY PATCH V2 === */
+/* ================================================= */
+/* Modal 通用透明度补丁 */
+/*
+ * 适配：
+ *
+ * .modal.mod-settings.mod-sidebar-layout
+ * .modal.mod-community-modal.mod-sidebar-layout.mod-community-theme
+ * .modal.mod-community-modal.mod-sidebar-layout.mod-community-plugin
+ *
+ * 以及其他未来可能出现的 .modal / .mod-sidebar-layout
+ *
+ * 注意：
+ * 只调整背景透明度，不使用 opacity < 1，
+ * 因此不会让文字、图片、按钮一起变淡。
+ */
+/* ================================================= */
+
+
+/* ------------------------------------------------- */
+/* Modal 外部遮罩 */
+/* ------------------------------------------------- */
+
+.modal-container.mod-dim {
+    background-color: rgba(0, 0, 0, 0.35) !important;
+}
+
+
+/* ------------------------------------------------- */
+/* 所有 Modal */
+/* ------------------------------------------------- */
+
+.modal {
+    opacity: 1 !important;
+
+    background-color: rgba(0, 0, 0, 0.84) !important;
+
+    --background-primary: rgba(0, 0, 0, 0.84) !important;
+    --background-primary-alt: rgba(0, 0, 0, 0.78) !important;
+
+    --background-secondary: rgba(0, 0, 0, 0.88) !important;
+    --background-secondary-alt: rgba(0, 0, 0, 0.80) !important;
+}
+
+
+/* ------------------------------------------------- */
+/* Sidebar Layout 类型 Modal */
+/*
+ * 这是核心规则。
+ *
+ * 可以覆盖：
+ *
+ * 设置
+ * 社区主题
+ * 社区插件
+ * 以及其他 mod-sidebar-layout 窗口
+ */
+/* ------------------------------------------------- */
+
+.modal.mod-sidebar-layout {
+    opacity: 1 !important;
+
+    background-color: rgba(0, 0, 0, 0.84) !important;
+
+    --background-primary: rgba(0, 0, 0, 0.84) !important;
+    --background-primary-alt: rgba(0, 0, 0, 0.78) !important;
+
+    --background-secondary: rgba(0, 0, 0, 0.88) !important;
+    --background-secondary-alt: rgba(0, 0, 0, 0.80) !important;
+}
+
+
+/* ------------------------------------------------- */
+/* Modal 内容区域 */
+/* ------------------------------------------------- */
+
+.modal .modal-content {
+    background-color: transparent !important;
+}
+
+.modal.mod-sidebar-layout .modal-content,
+.modal.mod-sidebar-layout .vertical-tab-content-container {
+    background-color: transparent !important;
+}
+
+
+/* ------------------------------------------------- */
+/* Sidebar Layout 左侧区域 */
+/* ------------------------------------------------- */
+
+.modal.mod-sidebar-layout .vertical-tab-header {
+    background-color: rgba(0, 0, 0, 0.88) !important;
+}
+
+
+/* ------------------------------------------------- */
+/* Sidebar Layout 右侧区域 */
+/* ------------------------------------------------- */
+
+.modal.mod-sidebar-layout .vertical-tab-content {
+    background-color: rgba(0, 0, 0, 0.84) !important;
+}
+
+
+/* ------------------------------------------------- */
+/* Modal Header */
+/* ------------------------------------------------- */
+
+.modal .modal-header {
+    background-color: rgba(0, 0, 0, 0.86) !important;
+}
+
+
+/* ------------------------------------------------- */
+/* Modal Footer */
+/* ------------------------------------------------- */
+
+.modal .modal-footer {
+    background-color: transparent !important;
+}
+
+
+/* ------------------------------------------------- */
+/* Community Modal */
+/*
+ * 社区主题 / 社区插件。
+ *
+ * 单独再提高一次优先级，防止 Obsidian 自带样式覆盖。
+ */
+/* ------------------------------------------------- */
+
+.modal.mod-community-modal {
+    opacity: 1 !important;
+
+    background-color: rgba(0, 0, 0, 0.84) !important;
+
+    --background-primary: rgba(0, 0, 0, 0.84) !important;
+    --background-primary-alt: rgba(0, 0, 0, 0.78) !important;
+
+    --background-secondary: rgba(0, 0, 0, 0.88) !important;
+}
+
+
+/* 社区主题 */
+.modal.mod-community-modal.mod-community-theme {
+    background-color: rgba(0, 0, 0, 0.84) !important;
+}
+
+
+/* 社区插件 */
+.modal.mod-community-modal.mod-community-plugin {
+    background-color: rgba(0, 0, 0, 0.84) !important;
+}
+
+
+/* Community Modal 左侧 */
+.modal.mod-community-modal .vertical-tab-header {
+    background-color: rgba(0, 0, 0, 0.88) !important;
+}
+
+
+/* Community Modal 右侧 */
+.modal.mod-community-modal .vertical-tab-content {
+    background-color: rgba(0, 0, 0, 0.84) !important;
+}
+
+
+/* ------------------------------------------------- */
+/* Community Modal 搜索区域 */
+/* ------------------------------------------------- */
+
+.modal.mod-community-modal .community-modal-search-summary,
+.modal.mod-community-modal .community-modal-search-results {
+    background-color: transparent !important;
+}
+
+
+/* ------------------------------------------------- */
+/* 社区主题 / 插件卡片 */
+/* ------------------------------------------------- */
+
+.modal.mod-community-modal .community-item {
+    background-color: rgba(255, 255, 255, 0.035) !important;
+}
+
+.modal.mod-community-modal .community-item:hover {
+    background-color: rgba(255, 255, 255, 0.07) !important;
+}
+
+
+/* ------------------------------------------------- */
+/* 设置项 */
+/* ------------------------------------------------- */
+
+.modal .setting-item {
+    background-color: transparent !important;
+}
+
+
+/* ------------------------------------------------- */
+/* 左侧导航 */
+/* ------------------------------------------------- */
+
+.modal .vertical-tab-nav-item {
+    background-color: transparent !important;
+}
+
+.modal .vertical-tab-nav-item.is-active {
+    background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.modal .vertical-tab-nav-item:hover {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+
+/* ------------------------------------------------- */
+/* Modal 内输入框 */
+/*
+ * 不做完全透明，否则搜索框辨识度太低。
+ */
+/* ------------------------------------------------- */
+
+.modal input[type="text"],
+.modal input[type="search"],
+.modal input[type="number"],
+.modal textarea,
+.modal select {
+    background-color: rgba(0, 0, 0, 0.45) !important;
+}
+
+
+/* === END MODAL TRANSPARENCY PATCH V2 === */
+body.in-progress::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.90);
+    z-index: 999999;
+    pointer-events: none;
+}
+
+/* ================================================= */
+/* Prompt 弹窗完全不透明 */
+/* ================================================= */
+
+.modal-container.mod-dim > .prompt {
+    opacity: 1 !important;
+
+    /* 弹窗本体完全不透明 */
+    background-color: rgb(20, 20, 20) !important;
+
+    /* 防止内部组件继续继承透明背景变量 */
+    --background-primary: rgb(20, 20, 20) !important;
+    --background-primary-alt: rgb(20, 20, 20) !important;
+    --background-secondary: rgb(20, 20, 20) !important;
+    --background-secondary-alt: rgb(20, 20, 20) !important;
+}
