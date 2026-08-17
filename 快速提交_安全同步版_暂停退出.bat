@@ -69,8 +69,7 @@ echo ==========================================
 echo.
 git status --short --branch
 echo.
-pause
-exit /b 0
+goto :END
 
 :FAIL
 echo.
@@ -80,5 +79,9 @@ echo ==========================================
 echo.
 git status --short --branch
 echo.
-pause
-exit /b 1
+
+:END
+echo.
+echo Press any key to close this window...
+pause >nul
+exit /b
