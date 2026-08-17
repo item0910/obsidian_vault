@@ -8,7 +8,11 @@ echo   Obsidian Git Safe Sync
 echo ==========================================
 echo.
 
-git rev-parse --is-inside-work-tree >nul 2>&1
+echo Git executable:
+where git
+echo.
+
+call git rev-parse --is-inside-work-tree >nul 2>&1
 if errorlevel 1 (
     echo [ERROR] Current directory is not a Git repository.
     echo Path: %CD%
@@ -18,16 +22,16 @@ if errorlevel 1 (
 for /f %%I in ('powershell -NoProfile -Command "Get-Date -Format yyyy-MM-dd_HH-mm-ss"') do set "commit_time=%%I"
 
 echo [1/4] Staging local changes...
-git add .
+call git add .
 if errorlevel 1 (
     echo [ERROR] git add failed.
     goto :FAIL
 )
 
-git diff --cached --quiet
+call git diff --cached --quiet
 if errorlevel 1 (
     echo [2/4] Committing local changes...
-    git commit -m "Obsidian sync %commit_time%"
+    call git commit -m "Obsidian sync %commit_time%"
     if errorlevel 1 (
         echo [ERROR] git commit failed.
         goto :FAIL
@@ -37,11 +41,16 @@ if errorlevel 1 (
 )
 
 echo [3/4] Pulling remote changes with rebase...
-git pull --rebase
-if errorlevel 1 (
+call git pull --rebase
+set "PULL_RC=%ERRORLEVEL%"
+
+echo.
+echo git pull --rebase exit code: %PULL_RC%
+
+if not "%PULL_RC%"=="0" (
     echo.
     echo [ERROR] Pull/Rebase failed.
-    echo There may be a merge conflict or network/authentication problem.
+    echo There may be a merge conflict, network problem, or authentication problem.
     echo.
     echo If Git reports CONFLICT:
     echo   1. Resolve the conflicting file(s).
@@ -54,8 +63,13 @@ if errorlevel 1 (
 )
 
 echo [4/4] Pushing to remote...
-git push
-if errorlevel 1 (
+call git push
+set "PUSH_RC=%ERRORLEVEL%"
+
+echo.
+echo git push exit code: %PUSH_RC%
+
+if not "%PUSH_RC%"=="0" (
     echo.
     echo [ERROR] git push failed.
     echo Check the error message above. Your local commits are still safe.
@@ -67,8 +81,7 @@ echo ==========================================
 echo   Sync completed successfully.
 echo ==========================================
 echo.
-git status --short --branch
-echo.
+call git status --short --branch
 goto :END
 
 :FAIL
@@ -77,11 +90,12 @@ echo ==========================================
 echo   Sync FAILED - nothing was force-pushed.
 echo ==========================================
 echo.
-git status --short --branch
-echo.
+call git status --short --branch
 
 :END
 echo.
-echo Press any key to close this window...
+echo ==========================================
+echo   Press any key to close this window...
+echo ==========================================
 pause >nul
 exit /b
