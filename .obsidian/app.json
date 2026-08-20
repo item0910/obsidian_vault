@@ -6,5 +6,6 @@
   "foldHeading": true,
   "attachmentFolderPath": "附件",
   "showInlineTitle": true,
-  "showLineNumber": false
+  "showLineNumber": false,
+  "livePreview": true
 }
