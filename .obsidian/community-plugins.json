@@ -22,7 +22,7 @@
   "obsidian-html-plugin",
   "table-editor-obsidian",
   "obsidian-excalidraw-plugin",
-  "recent-files-obsidian",
   "image-converter",
-  "oz-clear-unused-images"
+  "oz-clear-unused-images",
+  "recent-files-obsidian"
 ]
