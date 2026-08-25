@@ -1,5 +1,4 @@
 {
-  "baseFontSize": 16,
   "enabledCssSnippets": [
     "custom-icons-differing-files-and-folders",
     "1",
@@ -9,8 +8,9 @@
     "deep补充",
     "背景荷花",
     "my",
-    "背景小Q"
+    "背景lifang"
   ],
+  "baseFontSize": 16,
   "translucency": false,
   "cssTheme": "deeper work",
   "theme": "obsidian",
