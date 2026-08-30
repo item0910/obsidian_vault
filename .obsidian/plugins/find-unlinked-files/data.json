@@ -1,7 +1,10 @@
 {
   "outputFileName": "orphaned files output",
+  "orphanedFilesSortOrder": "size",
   "disableWorkingLinks": false,
-  "directoriesToIgnore": [],
+  "directoriesToIgnore": [
+    ""
+  ],
   "filesToIgnore": [],
   "fileTypesToIgnore": [],
   "linksToIgnore": [],
@@ -10,11 +13,15 @@
     "jpg",
     "png"
   ],
+  "fileTypesToArchive": [],
+  "archiveDirectory": "",
   "ignoreFileTypes": true,
   "ignoreDirectories": true,
   "unresolvedLinksIgnoreDirectories": true,
   "unresolvedLinksOutputFileName": "broken links output",
-  "unresolvedLinksDirectoriesToIgnore": [],
+  "unresolvedLinksDirectoriesToIgnore": [
+    "模板/"
+  ],
   "unresolvedLinksFilesToIgnore": [],
   "unresolvedLinksFileTypesToIgnore": [],
   "unresolvedLinksLinksToIgnore": [],
@@ -28,5 +35,8 @@
   ],
   "emptyFilesFilesToIgnore": [],
   "emptyFilesIgnoreDirectories": true,
+  "emptyFoldersOutputFileName": "empty folders",
+  "emptyFoldersDirectories": [],
+  "emptyFoldersIgnoreDirectories": true,
   "openOutputFile": true
 }
