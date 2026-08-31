@@ -2,7 +2,7 @@
 title: 阅读笔记_AI_用AI学习
 date: 2025-10-09
 categories: AI
-tags: 归档笔记/阅读笔记/程序员思维/学习
+tags: 归档笔记/阅读笔记/程序员思维
 author: 自己
 ---
 

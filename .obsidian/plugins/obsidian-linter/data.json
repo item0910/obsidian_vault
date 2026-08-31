@@ -292,7 +292,22 @@
   "linterLocale": "system-default",
   "logLevel": "ERROR",
   "lintCommands": [],
-  "customRegexes": [],
+  "customRegexes": [
+    {
+      "label": "Obsidian图片 ![[]] ",
+      "find": "\\n*[ \\t]*(!\\[\\[[^\\]]+\\.(?:png|jpg|jpeg|gif|webp|svg)(?:\\|[^\\]]*)?\\]\\])[ \\t]*\\n*",
+      "replace": "\\n\\n$1\\n\\n",
+      "flags": "g",
+      "enabled": true
+    },
+    {
+      "label": "Markdown图片",
+      "find": "\\n*[ \\t]*(!\\[[^\\]]*\\]\\(.*\\.(?:png|jpg|jpeg|gif|webp|svg)\\))[ \\t]*\\n*",
+      "replace": "",
+      "flags": "g",
+      "enabled": true
+    }
+  ],
   "commonStyles": {
     "aliasArrayStyle": "single-line",
     "tagArrayStyle": "single string comma delimited",

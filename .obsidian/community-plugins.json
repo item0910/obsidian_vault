@@ -1,5 +1,4 @@
 [
-  "mousewheel-image-zoom",
   "obsidian-image-toolkit",
   "obsidian-codemirror-options",
   "obsidian-local-images",
@@ -24,5 +23,6 @@
   "obsidian-excalidraw-plugin",
   "image-converter",
   "oz-clear-unused-images",
-  "recent-files-obsidian"
+  "recent-files-obsidian",
+  "obsidian-quiet-outline"
 ]
