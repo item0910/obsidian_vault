@@ -1,6 +1,9 @@
 ﻿.obsidian/cache/
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json
+# Keep third-party plugin activation local to each device.
+.obsidian/community-plugins.json
+.obsidian/community-plugins.json.local-backup-*
 .trash/
 .DS_Store
 Thumbs.db
